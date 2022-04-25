@@ -1,0 +1,9 @@
+<wj-multi-select-list-box #columnsBox [ngClass]="'select-columns'"
+    [displayMemberPath]="'header'"
+    [checkedMemberPath]="'selected'"
+    [itemsSource]="localColumns"
+    (checkedItemsChanged)="selectedItemsChanged()"
+></wj-multi-select-list-box>
+<div class="error" *ngIf="error">
+    You can not uncheck the last column
+</div>

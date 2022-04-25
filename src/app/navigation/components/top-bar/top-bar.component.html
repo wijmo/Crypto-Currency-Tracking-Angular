@@ -1,0 +1,26 @@
+<div class="top-bar bar-with-tabs">
+  <app-row>
+    <app-column>
+      <wj-tab-panel #dPanel (selectedIndexChanged)="selectTab(dPanel)">
+        <wj-tab *ngFor="let mode of VIEW_MODES">
+          <a>{{mode}}</a>
+          <div></div>
+        </wj-tab>
+      </wj-tab-panel>
+    </app-column>
+    <app-column class="shrink">
+      <div class="filter">
+        <mat-icon>search</mat-icon>
+        <input class="filter__input"
+               placeholder="Type a symbol name to filter"
+               [value]="filter"
+               (input)="onChange($event)"
+        />
+        <button mat-button *ngIf="filter.length>0"
+                (click)="changeFilter('')">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </app-column>
+  </app-row>
+</div>

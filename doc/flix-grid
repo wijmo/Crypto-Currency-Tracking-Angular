@@ -1,0 +1,2 @@
+                <FlexGrid
+                    rows={{defaultSize: settings.rowHeight}}    wrong

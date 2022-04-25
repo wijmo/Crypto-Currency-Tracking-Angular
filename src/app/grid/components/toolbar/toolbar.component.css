@@ -1,0 +1,26 @@
+.toolbar {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  padding: 12px 24px;
+  height: 80px;
+  color: #4285F4;
+}
+.toolbar .mat-button{
+  color: #4285F4;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  .popup-symbols {
+    max-width: 50%;
+  }
+}
+@media (max-width: 575px) {
+  .popup-columns {
+    width: 168px;
+    position: fixed;
+    left: 80px;
+  }
+}

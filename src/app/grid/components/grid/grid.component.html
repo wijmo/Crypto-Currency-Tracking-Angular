@@ -1,0 +1,39 @@
+<div class="app-grid">
+  <div class="helper" *ngIf="sourceData && sourceData.length === 0">
+    <ng-template [ngIf]="filter.length > 0">
+      <div class="helper-icon">
+        <mat-icon>search</mat-icon>
+      </div>
+      <div>No symbols found containing: {{filter}}</div>
+    </ng-template>
+    <ng-template [ngIf]="filter.length === 0">
+      <div class="helper-icon">
+        <mat-icon>playlist_add</mat-icon>
+      </div>
+      <div>Please add symbols to a list.</div>
+    </ng-template>
+  </div>
+  <wj-flex-grid
+                #flex [itemsSource]="sourceData" class="flex-grid"
+                [allowSorting]="'None'"
+                [autoGenerateColumns]="false" [isReadOnly]="true" [selectionMode]="'Row'"
+                [frozenRows]="settings.isFreezeFirstRow ? 1 : 0"
+                [frozenColumns]="settings.isFreezeFirstCol ? 1 : 0"
+                (initialized)="handleInitialized(flex)"
+                (formatItem)="handleFormatItem(flex, $event)"
+  >
+    <wj-flex-grid-column *ngFor="let column of viewColumns"
+                         [binding]="column.binding" [header]="column.header"
+                         [width]="column.width" [format]="column.format" [align]="column.align">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" *ngIf="settings.isCustomCells" let-cell="cell">
+        <div [innerHTML]="formatCustomCell(cell.item, cell.col, true) | safeHtml"></div>
+      </ng-template>
+    </wj-flex-grid-column>
+
+    <ng-template wjFlexGridDetail [isAnimated]=false let-item="item" let-row="row"
+                 #detail=wjFlexGridDetail
+                 (initialized)="detailInitialized(detail)">
+      <app-detail-panel (initialized)="detailPanelInitialized($event)"></app-detail-panel>
+    </ng-template>
+  </wj-flex-grid>
+</div>

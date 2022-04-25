@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  /*flex: 1 1 0; Fixes Internet Explorer Flexbox Partial support*/
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  align-items: center;
+  height: 100%;
+}
+:host(.shrink) {
+  flex: 0 0 auto;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.dir-column {
+  flex-direction: column;
+}
+.all-width {
+  width: 100%;
+}

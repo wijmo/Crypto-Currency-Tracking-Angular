@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Portfolios</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width:100%">
+    <input matInput placeholder="Search portfolio" [value]="filter"
+           (input)="onInput($event)"
+    />
+  </mat-form-field>
+  <mat-list style="width:100%">
+    <mat-list-item *ngFor="let name of filteredNames" [ngClass]="{'selected': name === selectedPortfolioName}" >
+      <span class="dialog-list-portfolio-span" (click)="handleSelect(name)">{{name}}</span>
+      <button mat-icon-button
+              (click)="handleDelete(name)"
+              aria-label="Delete">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <div class="error" *ngIf="error.length > 0">
+    {{error}}
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</div>

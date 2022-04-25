@@ -1,0 +1,5 @@
+chart-panel
+===========
+upper chart uses reversed axisX
+lower chart has to use not reversed axisX, because range selectors produce wrong limits
+So the two chart utilise different directions and candles do not coinside

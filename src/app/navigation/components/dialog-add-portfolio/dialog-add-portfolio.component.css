@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    padding: 24px;
+}
+.mat-button.save-button:enabled{
+    color: #4285F4;
+}
+.mat-button{
+    text-transform: uppercase;
+}
+.mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+/* .dialog-add-portfolio2 input.mat-input-element {
+    width: 100%;
+}
+:host input.mat-input-element {
+    width: 100%;
+}
+.add-portfolio-popup input.mat-input-element {
+    width: 100%;
+} */

@@ -1,0 +1,29 @@
+:host {
+  width: 100%;
+}
+.chart-panel {
+  width: 100%;
+}
+
+.chart-panel .flex-chart {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: transparent;
+  box-sizing: border-box;
+}
+
+.chart-panel .flex-chart .wj-axis-y {
+  opacity: .25;
+}
+
+.chart-panel .data-range {
+  max-height: 40px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: transparent;
+  background: transparent;
+  box-sizing: border-box;
+}

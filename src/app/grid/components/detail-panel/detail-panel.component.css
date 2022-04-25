@@ -1,0 +1,29 @@
+:host {
+}
+.detail-panel {
+  padding: .5rem 0;
+  background: #FBFBFB;
+}
+
+.detail-panel .headline {
+  display: flex;
+  align-items: center;
+  color: #CB2C77;
+  margin-left: -1rem;
+  font-size: 1.5rem;
+}
+.detail-panel .difference {
+  font-size: 1rem;
+}
+
+.detail-panel .headline_increased {
+  color: #73CA21;
+}
+
+.detail-panel td.mat-cell {
+  padding: 16px;
+}
+
+.detail-panel .mat-column-value {
+  text-align: right;
+}

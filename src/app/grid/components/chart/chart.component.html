@@ -1,0 +1,27 @@
+<div class="chart-panel">
+  <wj-flex-chart class="flex-chart" [itemsSource]="item.history"
+                 chartType="Candlestick" selectionMode="Point"
+                 [itemFormatter]="itemFormatter">
+    <wj-flex-chart-series binding="high,low,open,close"></wj-flex-chart-series>
+    <wj-flex-chart-legend position="None"></wj-flex-chart-legend>
+    <wj-flex-chart-axis wjProperty="axisX"
+                        position="None"
+                        [min]="range.axisMin"
+                        [max]="range.axisMax"
+                        [reversed]="true">
+    </wj-flex-chart-axis>
+  </wj-flex-chart>
+
+  <wj-flex-chart class="data-range" [itemsSource]="item.history"
+                 [plotMargin]="'6 0 6 80'" [itemFormatter]="itemFormatter">
+    <wj-flex-chart-series binding="volume"></wj-flex-chart-series>
+    <wj-flex-chart-axis wjProperty="axisX" position="None"></wj-flex-chart-axis>
+    <wj-flex-chart-axis wjProperty="axisY" position="None"></wj-flex-chart-axis>
+    <wj-flex-chart-legend position="None"></wj-flex-chart-legend>
+    <wj-flex-chart-range-selector #rangeSelector
+                                  [min]="range.axisMin"
+                                  [max]="range.axisMax"
+                                  (rangeChanged)="rangeChanged(rangeSelector)">
+    </wj-flex-chart-range-selector>
+  </wj-flex-chart>
+</div>

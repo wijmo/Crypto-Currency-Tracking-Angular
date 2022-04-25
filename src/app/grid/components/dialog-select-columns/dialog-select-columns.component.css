@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    padding: 24px;
+    width: 168px;
+}
+.select-columns {
+    width: 100%;
+}
+.error {
+    color: red;
+}

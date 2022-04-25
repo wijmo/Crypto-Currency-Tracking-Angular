@@ -1,0 +1,39 @@
+<div class="settings-panel">
+  <div>
+    <app-row>
+      <app-column>
+        <div class="title">Settings</div>
+      </app-column>
+      <app-column class="shrink">
+        <button mat-icon-button
+                (click)="closePanel()"
+                aria-label="close button">
+          <mat-icon>close</mat-icon>
+        </button>
+      </app-column>
+    </app-row>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="form-group" *ngFor="let item of switches">
+    <mat-slide-toggle [checked]="item.isChecked"
+                      [color]="'warn'"
+                      (change)="switchChanged(item.key, $event)">
+      {{item.label}}
+    </mat-slide-toggle>
+  </div>
+  <mat-form-field>
+    <label>Update Interval (s):</label>
+    <mat-select [value]="interval" (selectionChange)="intervalChanged($event)" panelClass="interval-options">
+      <mat-option *ngFor="let val of intervalOptions" [value]="val">{{val}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <label>Display density:</label>
+    <mat-select 
+        [value]="rowHeight" 
+        (selectionChange)="rowHeightChanged($event)"
+        disableOptionCentering>
+      <mat-option *ngFor="let val of rowHeightOptions" [value]="val.value">{{val.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

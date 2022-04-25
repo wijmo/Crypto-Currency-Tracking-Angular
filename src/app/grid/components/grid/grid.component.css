@@ -1,0 +1,79 @@
+:host {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+.app-grid {
+  min-height: 200px;
+  height: 100%;
+}
+.flex-grid.wj-flexgrid {
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  overflow: hidden;
+}
+
+.flex-grid .wj-row:focus {
+  outline: none;
+}
+
+.flex-grid .wj-cell.wj-frozen-row {
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.flex-grid .wj-cell.wj-frozen-col {
+  border-right: 1px solid #D6D6D6;
+}
+
+.flex-grid .wj-header.wj-cell.wj-frozen-col {
+  border-right-color: transparent;
+}
+
+.flex-grid .wj-alt:not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background-color: #fff;
+}
+
+.flex-grid .wj-alt:not(.wj-header):not(.wj-group):not(.wj-state-selected):not(.wj-state-multi-selected) {
+  background: #fff;
+}
+
+.flex-grid .wj-state-selected {
+  background: #F5F5F5;
+  color: #000;
+}
+
+.flex-grid .wj-state-multi-selected {
+  background: #F5F5F5;
+  color: #000;
+}
+
+.app-grid .helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+}
+
+.app-grid .helper-icon {
+  opacity: .7;
+  padding: 1rem;
+  line-height: 11px;
+  border-radius: 50%;
+  background: #eee;
+  margin-bottom: 1rem;
+}
+.app-grid .helper-icon .mat-icon {
+  font-size: 3rem;
+  width: 48px;
+  height: 48px;
+}
+

@@ -1,0 +1,47 @@
+<div class="toolbar">
+  <app-row>
+    <app-column>
+      <div class="caption">Symbols</div>
+      <button mat-button (click)="handleAddSymbol()">
+        <mat-icon>playlist_add</mat-icon>
+        <span>Symbols</span>
+      </button>
+      <button mat-button (click)="handleSelectColumns()">
+        <mat-icon>visibility_off</mat-icon>
+        <span>Columns</span>
+      </button>
+      <wj-popup #frmSymbols [ngClass]="'popup-symbols modal-center'">
+        <app-dialog-add-symbol
+          [allSymbols]="allSymbols"
+          [selectedSymbols]="selectedSymbols"
+          [onSave]="handleSaveSymbols">
+        </app-dialog-add-symbol>
+      </wj-popup>
+      <wj-popup #frmColumns [ngClass]="'popup-columns'">
+        <app-dialog-select-columns
+          [columns]="columns"
+          [onChange]="handleColumnsChange"
+        ></app-dialog-select-columns>
+      </wj-popup>
+    </app-column>
+
+    <app-column class="shrink">
+      <button mat-button
+              (click)="handleRefresh()">
+        <mat-icon>refresh</mat-icon>
+        <span>Refresh</span>
+      </button>
+      <button mat-button
+              (click)="handlePrint()">
+        <mat-icon>print</mat-icon>
+        <span>Print</span>
+      </button>
+      <button mat-button
+              (click)="handleDownload()">
+        <mat-icon>download</mat-icon>
+        <span>Download</span>
+      </button>
+    </app-column>
+  </app-row>
+</div>
+

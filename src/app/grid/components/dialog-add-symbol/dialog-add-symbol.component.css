@@ -1,0 +1,18 @@
+:host {
+    display: block;
+    padding: 24px;
+    height: 100%;
+}
+.mat-button.save-button:enabled{
+    color: #4285F4;
+}
+.mat-button{
+    text-transform: uppercase;
+}
+.mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.available-symbols {
+    margin: 16px auto;
+}

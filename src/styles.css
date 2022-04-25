@@ -1,0 +1,290 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '@grapecity/wijmo.styles/themes/material/wijmo.theme.material.indigo-amber.css';
+@import '@grapecity/wijmo.styles/wijmo.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 768px;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* include border and padding in element width and height */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #292b2c;
+}
+
+/* clears the 'X' from Internet Explorer (TFS 467481) */
+input::-ms-clear {  display: none; width : 0; height: 0; }
+input::-ms-reveal {  display: none; width : 0; height: 0; }
+
+.bar-with-tabs .wj-tabpanel {
+  height: 100%;
+  color: white;
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.app-bar .wj-tabheaders, .top-bar .wj-tabheaders {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.app-bar .wj-tabheaders a{
+  font-size: 14px;
+  padding: 14px 24px 8px !important;
+}
+
+/* For IE11 scrollbar (WJM-20977)*/
+@media  all and (-ms-high-contrast:none) {
+  .app-bar .wj-tabheaders a{
+    font-size: 14px;
+    padding: 10px 24px 12px !important;
+  }
+}
+
+.app-bar .wj-tabpanel > div:first-child, .app-bar .wj-tabheaders, .app-bar .wj-tabheaders a {
+  height: 100%;
+}
+.bar-with-tabs .wj-tabpanel > div > .wj-tabpanes {
+  border-top: none;
+}
+.app-bar .wj-tabpanel > div > .wj-tabheaders > .wj-tabheader {
+  font-weight: normal;
+  text-transform: none;
+}
+.top-bar .wj-tabpanel > div > .wj-tabheaders > .wj-tabheader {
+  font-weight: normal;
+}
+.bar-with-tabs .wj-tabpanel > div > .wj-tabheaders > .wj-tabheader.wj-state-active {
+  background-color: #3B78E7;
+  color: #fff;
+  font-weight: bold;
+}
+
+.top-bar .wj-tabpanel > div:first-child, .top-bar .wj-tabheaders {
+  height: 100%;
+}
+.top-bar .wj-tabpanel > div > .wj-tabheaders > .wj-tabheader.wj-state-active::after {
+  content: '';
+  position: absolute;
+  background: #FFC500;
+  height: 4px;
+  bottom: 0;
+}
+
+/* grid.component styles */
+.flex-grid .wj-detail {
+  min-width: 80vw;
+}
+
+.flex-grid .ticker div {
+  display: inline-block;
+}
+
+.flex-grid .ticker .chg {
+  text-align: center;
+  width: 4em;
+}
+
+.flex-grid .ticker .glyph {
+  font-size: 120%;
+  text-align: center;
+  width: 1em;
+}
+
+.flex-grid .ticker .spark {
+  margin-left: 1rem;
+  width: 4em;
+  height: 1em;
+  opacity: .65;
+}
+
+.flex-grid .ticker.chg-up {
+  color: green;
+}
+
+.flex-grid .ticker.chg-down {
+  color: red;
+}
+
+.flex-grid .ticker .spark svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 1px;
+  overflow: visible;
+}
+
+.flex-grid .wj-header.wj-cell {
+  color: inherit;
+  background: #FFF;
+  border: transparent;
+  border-bottom: 1px solid #E6E6E6;
+  font-weight: 500;
+  padding: .5rem;
+}
+
+.flex-grid .wj-cell {
+  background-color: #fff;
+  border: transparent;
+  border-bottom: 1px solid #E6E6E6;
+  padding: .5rem;
+}
+
+.flex-grid .wj-cell > div {
+  position: relative;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.flex-grid .wj-rowheaders .wj-cell.wj-header {
+  padding: 1rem .5rem;
+  background: #fbfbfb;
+  cursor: pointer;
+  border-right: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-grid .indicator.sell {
+  color: red;
+}
+
+.flex-grid .indicator.buy {
+  color: green;
+}
+
+
+.detail-panel .column {
+  box-sizing: border-box;
+  padding: 1rem 3rem;
+}
+
+.select-dialog .mat-dialog-container {padding: 1rem 2rem;}
+.select-dialog .mat-dialog-container ul {padding: 0;}
+
+.dialog-add-symbol .mat-dialog-content {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog-add-symbol .mat-chip-list-wrapper {
+  justify-content: center;
+}
+
+.dialog-add-symbol mat-chip-list {
+  padding-top: 16px;
+}
+.dialog-add-symbol mat-form-field {
+  text-align: center;
+}
+.dialog-add-symbol .mat-form-field-underline {
+  display: none;
+}
+.dialog-add-symbol .mat-form-field-infix {
+  border-top: none;
+}
+.dialog-add-symbol .chip-list-label {
+  font-size: 16px;
+  padding-bottom: 16px;
+  display: inline-block;
+
+}
+.dialog-add-symbol mat-chip {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+.dialog-add-symbol .mat-dialog-actions {
+  justify-content: flex-end;
+}
+.dialog-add-symbol .mat-button {
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.dialog-add-symbol .mat-button.save-button {
+  color: #4285F4;
+}
+
+.dialog-add-portfolio .mat-form-field, .dialog-add-portfolio .mat-input-element{
+  width: 100%;
+}
+.dialog-add-portfolio .mat-button{
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.dialog-add-portfolio .mat-button.save-button:enabled{
+  color: #4285F4;
+}
+.dialog-add-portfolio .mat-dialog-actions {
+  justify-content: flex-end;
+}
+.dialog-add-portfolio .error{
+  color: red;
+}
+
+.dialog-list-portfolios {
+  font-size: 1rem;
+}
+.dialog-list-portfolios .mat-form-field, .dialog-list-portfolios .mat-input-element{
+  width: 100%;
+}
+.dialog-list-portfolios .mat-button{
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.dialog-list-portfolios .mat-dialog-actions {
+  justify-content: flex-end;
+}
+.dialog-list-portfolios .mat-list-item-content {
+  justify-content: stretch;
+}
+.dialog-list-portfolios .mat-list-item-content:hover {
+  background-color: #ddd;
+}
+.dialog-list-portfolios .mat-list-item-content>span{
+  flex: 1;
+  cursor: pointer;
+}
+.dialog-list-portfolios .error{
+  color: red;
+}
+.dialog-list-portfolios .mat-form-field.mat-focused .mat-form-field-label{
+  color: #3f51b5;
+  font-size: 16px;
+}
+.dialog-list-portfolios .mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: #3f51b5;
+}
+.dialog-list-portfolios .selected {
+  background-color: #ddd;
+}
+
+.add-selected-symbols input.wj-form-control {
+  min-width: 100px;
+}
+
+@media (max-width: 575px) {
+  .modal-center {
+    position: fixed !important;
+    left: 2vw !important;
+    right: 2vw !important;
+    max-width: 96vw;
+  }
+}

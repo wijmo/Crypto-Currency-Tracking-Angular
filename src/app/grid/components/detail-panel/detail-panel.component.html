@@ -1,0 +1,25 @@
+<div class="detail-panel">
+  <app-row>
+    <app-column class="dir-column shrink">
+      <div [class]="headlineClasses">
+        <mat-icon>{{icon}}</mat-icon>
+        {{item.close.toFixed(2)}}
+      </div>
+      <div [class]="difference">{{difference}}</div>
+    </app-column>
+    <app-column class="all-width">
+      <app-chart [item]="item"></app-chart>
+    </app-column>
+    <app-column class="shrink">
+      <table mat-table [dataSource]="itemSummaryData">
+        <ng-container matColumnDef="name">
+          <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="value">
+          <td mat-cell *matCellDef="let element">{{element.value}}</td>
+        </ng-container>
+        <tr mat-row *matRowDef="let row; columns: displayedSummaryColumns;"></tr>
+      </table>
+    </app-column>
+  </app-row>
+</div>

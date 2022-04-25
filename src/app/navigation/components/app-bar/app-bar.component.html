@@ -1,0 +1,46 @@
+<div class="app-bar bar-with-tabs">
+  <app-row>
+    <app-column class="shrink">
+      <div class="title">Portfolio & Watchlist</div>
+      <button mat-icon-button *ngFor="let actionButton of mainActions"
+              (click)="actionButton.handler()"
+              aria-label="actionButton.label">
+        <mat-icon>{{actionButton.icon}}</mat-icon>
+      </button>
+      <wj-popup #frmAddPortfolio [ngClass]="'add-portfolio-popup modal-center'">
+        <app-dialog-add-portfolio
+          [usedNames]="usedNames"
+          [selectedPortfolioName]="selectedPortfolioName"
+          [onSave]="handleAddPortfolio"
+        ></app-dialog-add-portfolio>
+      </wj-popup>
+      <wj-popup #frmListPortfolio [ngClass]="'list-portfolio-popup modal-center'">
+        <app-dialog-list-portfolio
+          [usedNames]="usedNames"
+          [selectedPortfolioName]="selectedPortfolioName"
+          [onSelect]="handlListPortfolio"
+          [onDelete]="handlDeletePortfolio"
+        ></app-dialog-list-portfolio>
+      </wj-popup>
+    </app-column>
+
+
+    <app-column class="tab-panel-column">
+      <wj-tab-panel #dPanel [selectedIndex]="portfolioIndex" (selectedIndexChanged)="selectTab(dPanel)">
+        <wj-tab *ngFor="let tab of portfolios">
+          <a>{{tab.name}}</a>
+          <div></div>
+        </wj-tab>
+      </wj-tab-panel>
+    </app-column>
+    <app-column class="shrink">
+      <button mat-icon-button
+              (click)="settingsAction.handler()"
+              aria-label="settingsAction.label">
+        <mat-icon>{{settingsAction.icon}}</mat-icon>
+      </button>
+    </app-column>
+  </app-row>
+
+
+</div>

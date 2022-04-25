@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Select Symbols</h1>
+
+<wj-multi-auto-complete #symbolsList [ngClass]="'add-selected-symbols'"
+    [placeholder]="'Add symbol'" 
+    [selectedItems]="_selectedSymbols"
+    [itemsSource]="availableSymbols"
+    (selectedItemsChanged)="selectedItemsChanged()"
+>
+</wj-multi-auto-complete>
+
+<div class="available-symbols">Available Symbols: {{ availableSymbolsList }}</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button class="save-button" (click)="save()">Save</button>
+</div>
+  

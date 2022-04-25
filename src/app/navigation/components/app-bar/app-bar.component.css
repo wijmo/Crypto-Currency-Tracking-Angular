@@ -1,0 +1,64 @@
+.app-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #FFF;
+  height: 48px;
+  padding: 0 24px;
+  background: #0044BF;
+  transition: width 200ms ease-in-out;
+  box-sizing: border-box;
+}
+.app-bar .title {
+  font-size: 20px;
+  margin-right: 1em;
+}
+
+.app-bar .mat-icon-button {
+  border-radius: 0;
+  background-color: transparent;
+  color: #FFF;
+}
+
+.app-bar a.wj-tabheader {
+  max-width: 10em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-bar .tab-panel-column {
+  overflow: auto;
+}
+
+.list-portfolio-popup {
+  width: 500px;
+  max-width: 90vw;
+}
+
+/* Scrollbar styles for Chrome, Edge, Safari */
+.app-bar .tab-panel-column::-webkit-scrollbar {
+  height: 0.8em;
+  background-color: darkblue;
+}
+.app-bar .tab-panel-column::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 6px;
+  border: 3px solid darkblue;
+}
+
+/* Scrollbar styles for Firefox */
+.app-bar .tab-panel-column {
+  scrollbar-width: thin;
+  scrollbar-color: #666 darkblue;
+}
+
+
+
+
+
+
+
+
+
+

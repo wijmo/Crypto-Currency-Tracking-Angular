@@ -1,0 +1,42 @@
+.top-bar {
+  background-color: #3B78E7;
+  height: 72px;
+  padding: 0 24px;
+}
+.top-bar .filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .15);
+}
+.top-bar .filter > .mat-icon {
+  margin: 0 12px;
+}
+
+.top-bar .filter__input {
+  font: inherit;
+  border: 0;
+  white-space: normal;
+  background: none;
+  margin: 0;
+  color: inherit;
+  transition: width 300ms cubic-bezier(.4, 0, .2, 1) 0ms;
+  width: 240px;
+}
+
+.top-bar .filter__input:focus {
+  outline: 0;
+}
+
+.top-bar .filter__input::placeholder {
+  color: white;
+  opacity: .8;
+}
+
+.top-bar .filter__input:focus::placeholder {
+  opacity: 0;
+}

@@ -1,0 +1,22 @@
+:host {
+    display: block;
+    padding: 24px;
+    width: 500px;
+    max-width: 90vw;
+}
+.add-portfolio-popup {
+    width: 500px;
+    max-width: 90vw;
+}
+.mat-button{
+    text-transform: uppercase;
+}
+.dialog-list-portfolio-span {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+:host .selected {
+    background-color: #ddd;
+}
